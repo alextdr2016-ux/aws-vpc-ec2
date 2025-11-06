@@ -1,0 +1,20 @@
+New-Item -Path . -Name ".gitignore" -ItemType "file" -Value @"
+# Terraform files
+.terraform/
+*.tfstate
+*.tfstate.*
+terraform.tfstate.backup
+.terraform.lock.hcl
+
+# Plan files
+*.plan
+*-plan
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+"@
