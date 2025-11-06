@@ -19,7 +19,7 @@ resource "aws_instance" "web" {
   instance_type               = var.instance_type
   subnet_id                   = aws_subnet.ec2_demo_public.id
   vpc_security_group_ids      = [aws_security_group.web_sg.id]
-  key_name                    = aws_key_pair.ssh_key.key_name
+  key_name = length(aws_key_pair.ssh_key) > 0 ? aws_key_pair.ssh_key[0].key_name : null
   associate_public_ip_address = true
 
   # --- user_data ---
