@@ -40,3 +40,8 @@ variable "instance_type" {
   type        = string
   default     = "t3.micro"
 }
+variable "create_key_pair" {
+  description = "Whether to create SSH key pair"
+  type        = bool
+  default     = false
+}
