@@ -5,7 +5,12 @@ resource "aws_vpc" "vpc_ec2_demo" {
   enable_dns_hostnames = true
 
 
-  tags = {
-    Name = "${var.project_name}-vpc"
+   tags = {
+    Name        = "${var.project_name}-vpc"
+    Description = "VPC creat automat prin CI/CD pipeline"
+    Environment = "demo" 
+    Project     = var.project_name
+    ManagedBy   = "terraform"
+    Owner       = "Alex"
   }
 }
